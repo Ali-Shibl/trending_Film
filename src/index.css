@@ -1,13 +1,149 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+:root{
+  --bg-body:#131722;
+  --main-font: 'Montserrat Alternates', sans-serif;
+  --light-bg:#24baef;
+  --font-color:#fff;
+  --bg-nav: rgb(15, 31, 53);
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a{
+  color: var(--font-color);
+  text-decoration: none;
+}
+body {
+ background-color:var(--bg-body) ;
+ font-family: var(--main-font);
+ color: var(--font-color);
+}
+.offline{
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  background-color: #24baef;
+  color: #131722;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 5px rgb(46, 79, 139);
+  font-weight: bolder;
+  cursor: pointer;
+  z-index: 111111;
+}
+/*all form */
+form{
+  width: 90%;
+}
+.head-form{
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+.head-form::after{
+  content: "";
+position: absolute;
+bottom: -15px;
+left: 0;
+background-color: aliceblue;
+width: 100%;
+height: 3px;
+z-index: 1;
+}
+.head-form::before{
+  content: "";
+position: absolute;
+bottom: -23px;
+left: 0%;
+transform: translateX(-50%);
+width: 18%;
+border: 10px solid ;
+border-color: rgb(0, 95, 139) transparent  rgb(0, 95, 139) transparent ;
+z-index: 12;
+animation: trans 1.5s infinite linear alternate;
+}
+@keyframes trans {
+  0%{
+    left: 0%;
+  }
+  100%{
+    left: 100%;
+  }
+}
+.item-form label{
+  transition: .5s;
+position: relative;
+top: -0px;
+left: 3px;
+color: black;
+opacity: 0;
+}
+.item-form input:focus ~ label{
+  top: -70px;
+  color: #ffff;
+ opacity: 1;
+}
+.error{
+  position: relative;
+  top: -20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.bordr{
+  background-color: rgb(70, 84, 103);
+  height: 2px; 
+}
+.movie h3{
+top: 100%;
+ z-index: 121212;
+ transition: .4s ;
+ font-size: 25px;
+}
+.movie:hover h3{
+top: 0%;
+}
+.movie:hover {
+  cursor: pointer;
+}
+.loading{
+  height: 75vh !important;
+}
+.text-home h1{
+  font-size: 20px;
+  padding: 0 5px;
+  line-height: 1.5;
+}
+.text-home p{
+font-size: 15px;
+padding: 0 5px;
+}
+.notfound{
+  height: 70vh;
+}
+@media (min-width:768px) {
+  form{
+    width: 75%;
+  }
+  .movie h3{
+    font-weight: bolder;
+     font-size: 15px;
+    }
+}
+@media (min-width:992px) {
+  .text-home h1{
+    font-size: 28px;
+  }
+  .text-home p{
+  font-size: 22px;
+  }
 }
